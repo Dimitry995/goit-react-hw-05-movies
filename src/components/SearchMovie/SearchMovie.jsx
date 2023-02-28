@@ -12,12 +12,12 @@ import {
 export function SearchMovie({ onSubmit }) {
   const [query, setQuery] = useState('');
 
-  const handleChangeInput = evt => {
-    setQuery(evt.currentTarget.value.toLowerCase());
+  const handleChangeInput = evet => {
+    setQuery(evet.currentTarget.value.toLowerCase());
   };
 
-  const handleSubmitForm = evt => {
-    evt.preventDefault();
+  const handleSubmitForm = evnt => {
+    evnt.preventDefault();
     if (query.trim() === '' || query.length < 2) {
       toast.warn('Searching must be no empty and more than 1 letter');
       resetForm();
