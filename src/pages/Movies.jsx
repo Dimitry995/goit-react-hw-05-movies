@@ -11,7 +11,6 @@ const MovieList = lazy(() => import('../components/MovieList'));
 const Movies = () => {
   const [query, setQuery] = useState(null);
   const [movies, setMovies] = useState(
-    JSON.parse(localStorage.getItem('movies')) || null
   );
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -23,7 +22,6 @@ const Movies = () => {
     API.fetchMovieSearch(movieName)
       .then(res => {
         setMovies(res);
-        localStorage.setItem('movies', JSON.stringify(res));
       })
       .catch(() => toast.error('Sorry, there are not details of this movie'));
   }, [movieName]);

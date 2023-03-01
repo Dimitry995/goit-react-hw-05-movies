@@ -6,7 +6,6 @@ import { API } from 'services';
 import { Loader } from 'services';
 import { MovieCard } from 'components/MovieCard';
 import { ButtonGoBack, AddInfoWrapper, InfoItem } from './MovieDetails.styled';
-
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState();
@@ -14,11 +13,11 @@ export const MovieDetails = () => {
   const location = useLocation();
 
   const initialPath = useRef(location?.state?.from?.pathname || null);
-
+  let linkBack = useRef(location.state.from);
   let backLink = '';
   if (initialPath.current === '/') {
     backLink = '/';
-  } else backLink = '/movies';
+  } else backLink = `${linkBack}`;
 
   useEffect(() => {
     API.fetchMovieById(movieId)
