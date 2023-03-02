@@ -1,13 +1,13 @@
 import notPage from '../images/notPage.jpg';
+import { Block, Img} from '../pages/NFP.styled.js'
 
 const NotFoundPage = () => {
   return (
     <>
-      <div style={{ padding: '40px', fontSize: '24px' }}>
+      <Block >
         This page doesn't exist. Click on "Home"
-      </div>
-      <img
-        style={{ width: '400px', height: 'auto' }}
+      </Block>
+      <Img
         src={notPage}
         alt="Not Page"
       />
