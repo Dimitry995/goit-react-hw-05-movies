@@ -36,15 +36,11 @@ export const MovieDetails = () => {
           <MovieCard movieDetails={movieDetails} />
           <AddInfoWrapper>
             <InfoItem
-              to={`/movies/${movieId}/cast`}
-              state={{ from: location }}
-            >
+              to={`/movies/${movieId}/cast`}>
               Cast
             </InfoItem>
             <InfoItem
-              to={`/movies/${movieId}/reviews`}
-               state={{ from: location }}
-            >
+              to={`/movies/${movieId}/reviews`}>
               Reviews
             </InfoItem>
           </AddInfoWrapper>
