@@ -34,13 +34,13 @@ export const MovieDetails = () => {
           <AddInfoWrapper>
             <InfoItem
               to={`/movies/${movieId}/cast`}
-              // state={{ from: location }}
+               state={{ from: location }}
             >
               Cast
             </InfoItem>
             <InfoItem
               to={`/movies/${movieId}/reviews`}
-              // state={{ from: location }}
+              state={{ from: location }}
             >
               Reviews
             </InfoItem>
