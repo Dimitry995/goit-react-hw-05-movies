@@ -13,7 +13,7 @@ export const MovieDetails = () => {
 
   const location = useLocation();
   //const navigate = useNavigate();
-  const initialPath = useRef(location?.state?.from?.pathname || null);
+  const initialPath = useRef(location.state.from.pathname);
   //let linkBack = useRef(location?.state?.from?.pathname);
   let backLink = '';
   if (initialPath.current === '/') {
