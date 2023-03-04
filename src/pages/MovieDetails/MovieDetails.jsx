@@ -19,7 +19,7 @@ export const MovieDetails = () => {
   if (initialPath.current === '/') {
   backLink = '/';
   } else {
-  backLink = location.state.from;
+  backLink = location.state?.from ?? "/movies";
   }
 
   useEffect(() => {
