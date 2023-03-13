@@ -1,6 +1,5 @@
 import { useParams, Outlet, useLocation, } from 'react-router-dom';
 import { useState, useEffect, useRef, Suspense } from 'react';
-//import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { API } from 'services';
@@ -10,14 +9,16 @@ import { ButtonGoBack, AddInfoWrapper, InfoItem } from './MovieDetails.styled';
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState();
-  //const navigate = useNavigate();
+
   const location = useLocation();
+  //const navigate = useNavigate();
   const initialPath = useRef(location?.state?.from?.pathname || null);
+  //let linkBack = useRef(location?.state?.from?.pathname);
   let backLink = '';
   if (initialPath.current === '/') {
   backLink = '/';
   } else {
-  backLink = location?.state?.from ?? '/';
+  backLink = location.state.from;
   }
 
   useEffect(() => {
