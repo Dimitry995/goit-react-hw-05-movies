@@ -13,12 +13,11 @@ export const MovieDetails = () => {
   const location = useLocation();
   //const navigate = useNavigate();
   const initialPath = useRef(location?.state?.from?.pathname || null);
-  //let linkBack = useRef(location?.state?.from?.pathname);
   let backLink = '';
   if (initialPath.current === '/') {
   backLink = '/';
   } else {
-  backLink = location.state.from;
+  backLink = location?.state?.from ?? '/';
   }
 
   useEffect(() => {
